@@ -1,0 +1,67 @@
+/* ========== استایل‌هایی که با Tailwind نمیشه ========== */
+
+/* کانتینر اصلی */
+.title-cards {
+    margin: 0;
+    padding: 0px 40px 20px;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.315), rgba(111, 1, 174, 0.37));
+    border-radius: 50px;
+}
+
+/* اسکرول کارت‌ها */
+.card-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 20px 5px;
+}
+
+/* مخفی کردن اسکرول بار */
+.card-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* کارت‌ها */
+.card {
+  color: aliceblue;
+    min-width: 160px;
+    max-width: 200px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1a1a1a;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgb(187, 77, 251);
+}
+
+/* ========== ریسپانسیو ========== */
+
+@media (max-width: 768px) {
+    .title-cards {
+        padding: 0 15px 15px;
+        border-radius: 30px;
+    }
+    
+    .card {
+        min-width: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+  .title-cards {
+    padding: 0 8px 10px;
+    border-radius: 20px;
+  }
+    
+  .card {
+   min-width: 110px;
+  }
+}
