@@ -1,6 +1,3 @@
-/* Player.css - فقط استایل‌هایی که با Tailwind امکان‌پذیر نبودند */
-
-/* استایل‌های اصلی که با Tailwind قابل پیاده‌سازی نبودند */
 .player-container {
   position: fixed;
   inset: 0;
@@ -10,7 +7,7 @@
   flex-direction: column;
   padding: 25px 35px 35px;
   overflow-y: auto;
-  animation: slideUp 0.4s ease;
+  animation: slideUp 0.4s ease forwards;
 }
 
 @keyframes slideUp {
@@ -157,7 +154,7 @@
 
 .movie-details {
   flex: 1;
-  color: #fff;
+  min-width: 0; /* حیاتی برای جلوگیری از خراب شدن فلکس‌باکس و بیرون زدن فرزندان افقی */
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -170,13 +167,6 @@
   background: linear-gradient(90deg, #fff, #c97bf5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.movie-tagline {
-  font-size: 15px;
-  color: #ad37f1;
-  font-style: italic;
-  margin: 0 0 3px;
 }
 
 .movie-meta {
@@ -194,35 +184,20 @@
   font-size: 13px;
 }
 
-.movie-meta .rating-star {
-  color: #ffd700 !important;
-  font-weight: 700;
-}
-
-.movie-overview {
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.65);
-  max-width: 600px;
-  margin: 0;
-}
-
 .movie-actions {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  margin-bottom: 400px;
   margin-top: 8px;
   align-items: center;
 }
 
 .movie-actions button,
 .movie-actions a {
-  width: 25%;
-  border: none;
+  height: 48px;
   min-width: 150px;
   border-radius: 10px;
   justify-content: center;
-  font-size: 17px;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -231,7 +206,6 @@
 }
 
 .watch-btn {
-  height: 6vh;
   background: linear-gradient(140deg, #bf72eb, #8a2be2);
   color: #fff;
   box-shadow: 0 4px 20px rgba(173, 55, 241, 0.3);
@@ -246,6 +220,7 @@
   background: rgba(255,255,255,0.06);
   color: #fff;
   border: 1px solid rgba(255,255,255,0.08);
+  
 }
 
 .info-btn.active {
@@ -259,6 +234,7 @@
   border-color: rgba(173, 55, 241, 0.3);
 }
 
+/* اصلاح استایل اسکرول لیست بازیگران */
 .cast-list-horizontal {
   display: flex;
   overflow-x: auto;
@@ -269,30 +245,30 @@
   -webkit-overflow-scrolling: touch;
 }
 
+/* استایل دهی مجدد اسکرول‌بار تا در مرورگرها دیده شود */
 .cast-list-horizontal::-webkit-scrollbar {
-  height: 4px;
-  display: none;
+  height: 6px;
+  display: block;
 }
 
 .cast-list-horizontal::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .cast-list-horizontal::-webkit-scrollbar-thumb {
-  background: #ad37f1;
-  border-radius: 2px;
+  background: rgba(173, 55, 241, 0.5);
+  border-radius: 10px;
 }
 
 .cast-list-horizontal::-webkit-scrollbar-thumb:hover {
-  background: #c97bf5;
+  background: rgba(173, 55, 241, 0.8);
 }
 
 .cast-item-horizontal {
   flex: 0 0 auto;
-  width: 140px;
-  text-align: center;
-  padding: 12px 10px 14px;
+  width: 130px;
+  padding: 12px 10px;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   transition: all 0.3s ease;
@@ -303,17 +279,16 @@
   background: rgba(173, 55, 241, 0.08);
   border-color: rgba(173, 55, 241, 0.2);
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cast-item-horizontal img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 10px;
+  margin: 0 auto;
   display: block;
-  border: 3px solid rgba(173, 55, 241, 0.15);
+  border: 2px solid rgba(173, 55, 241, 0.15);
   transition: border-color 0.3s;
 }
 
@@ -321,51 +296,90 @@
   border-color: #ad37f1;
 }
 
-.cast-info-horizontal {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
 
-.cast-info-horizontal .cast-name {
-  font-size: 13px;
-  font-weight: 600;
-  color: #fff;
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.cast-info-horizontal .cast-character {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
+/* ریسپانسیو مچ شده با کلاس‌های کمکی */
 @media (max-width: 768px) {
   .player-container { padding: 15px; }
-  .close-btn { top: 15px; right: 15px; width: 38px; height: 38px; font-size: 16px; }
+  .close-btn { top: 15px; right: 3px; font-size: 16px; }
   .player-wrapper { gap: 18px; padding-top: 15px; }
   .player-info { flex-direction: column; align-items: center; padding: 20px; gap: 18px; }
-  .movie-poster { width: 140px; height: 210px; }
-  .movie-details { align-items: center; text-align: center; }
-  .movie-details h1 { font-size: 24px; }
+  .movie-details h1 { font-size: 24px; text-align: center; }
   .movie-meta { justify-content: center; }
-  .movie-overview { text-align: center; max-width: 100%; }
-  .movie-actions { flex-direction: column; align-items: center; width: 100%; }
-  .movie-actions button,
-  .movie-actions a { padding: 8px 18px; font-size: 13px; width: 100%; }
+  .movie-actions { width: 100%;   flex-wrap: wrap;}
+  .movie-actions button, .movie-actions a { width: 100%; }
+
+  /* ------------------------------------------------ */
+  /* تبدیل اسکرول افقی بازیگران به چیدمان عمودی در موبایل */
+  /* ------------------------------------------------ */
+  .cast-list-horizontal {
+    flex-direction: column;   /* چیدمان عمودی کارت‌ها زیر هم */
+    overflow-x: visible;      /* غیرفعال کردن اسکرول افقی */
+    gap: 12px;                /* فاصله بین کارت‌های عمودی */
+    padding: 10px 0;
+  }
+
+  .cast-item-horizontal {
+    width: 100%;              /* کارت‌ها تمام عرض باکس را پر کنند */
+    display: flex;            /* تبدیل چیدمان داخلی کارت به افقی (عکس سمت راست، متن سمت چپ) */
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    text-align: right;        /* راست‌چین کردن متن‌ها در موبایل */
+  }
+
+  .cast-item-horizontal img {
+    margin: 0;                /* حذف وسط‌چین بودن عکس */
+    width: 55px;              /* کمی کوچک‌تر کردن عکس برای هماهنگی با لاین عمودی */
+    height: 55px;
+  }
+
+  .cast-item-horizontal .flex {
+    align-items: flex-start;  /* تراز کردن متن‌ها به سمت راست */
+    text-align: right;
+    margin-top: 0;            /* حذف مارجین بالایی که در دسکتاپ بود */
+  }
+
+}
+/* استایل‌های بخش نظرات */
+.comments-section {
+  width: 100%;
+  max-width: 100%;
 }
 
-@media (max-width: 480px) {
-  .movie-poster { width: 110px; height: 165px; }
-  .movie-details h1 { font-size: 20px; }
-  .movie-meta span { font-size: 11px; }
-  .movie-overview { font-size: 13px; }
-  .movie-actions button,
-  .movie-actions a { padding: 7px 14px; font-size: 12px; }
+.comment-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
 }
+
+.comment-card {
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.comment-card:hover {
+  border-color: rgba(173, 55, 241, 0.2);
+  transform: translateY(-2px);
+}
+.submit-comment-btn{ background-color: #8a2be2; }
+.submit-comment-btn:hover {
+  background-color: #f8f7f9f3;
+  color: #8a2be2 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(173, 55, 241, 0.4);
+}
+
+.submit-comment-btn:active {
+  transform: translateY(0);
+}
+
+/* هماهنگی رسپانسیو در موبایل */
+@media (max-width: 768px) {
+  .comment-form {
+    padding: 15px;
+  }
+  
+  .submit-comment-btn {
+    width: 100%; /* دکمه ارسال در موبایل تمام عرض می‌شود */
+    text-align: center;
+    justify-content: center;
+  }
+}
+
