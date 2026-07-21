@@ -1,48 +1,127 @@
-
 .Navbar{
-    padding: 20px 6%;
-    background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.7) 10%,
-    transparent);
+  padding: 20px 6%;
+  background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.7) 10%,
+  transparent);
 }
+
+/* همینا مال خودت */
 .navbar-right ul{
-    display: flex;
-    list-style: none;
-    gap: 20px;
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 .navbar-right ul li{
-    cursor: pointer;
-    transition: color 0.4s ease;
-    animation: up 2s;
+  cursor: pointer;
+  transition: color 0.4s ease;
+  animation: up 2s;
 }
 .navbar-right ul li:hover{
-    color: rgb(173, 57, 241);
+  color: rgb(173, 57, 241);
 }
 @keyframes up{
-    0%{
-        transform: translateY(-10px);
-    }
-    
-    50%{
-        transform: translateY(10px);
-    }
+  0%{ transform: translateY(-10px); }
+  50%{ transform: translateY(10px); }
 }
 .btn-ganr{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .py-1 a{
-    text-decoration: none;
-    color:rgb(173, 57, 241);
-    transition: all ease 0.35s;
+  text-decoration: none;
+  color:rgb(173, 57, 241);
+  transition: all ease 0.35s;
 }
 .py-1 a:hover{background-color: rgba(174, 57, 241, 0.132);}
 .navbar-left .navbar-profile img{
-    width: 30%;
+  width: 30%;
 }
 .navbar-left img{
-width: 17%;
+  width: 17%;
 }
 .navbar-left .navbar-profile button{transition: color 0.4s ease;}
 .navbar-left .navbar-profile button:hover{
-color: rgb(173, 57, 241);
+  color: rgb(173, 57, 241);
+}
+
+/* --- فقط برای ریسپانسیو --- */
+.mobile-menu-btn{
+  display: none;
+  background: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+
+.mobile-panel{
+  display: none;
+}
+
+.mobile-links{
+ background-color:rgb(242, 242, 236); 
+  list-style: none;
+  margin: 0;
+  padding: 10px 10px;
+  border-radius: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.mobile-links li{
+  background: rgba(174, 57, 241, 0.406);
+  border-radius: 10px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+/* نکته: تو دسکتاپ، ul همون قبلی نمایش داده میشه */
+.nav-links{
+  display: block;
+}
+
+/* موبایل */
+@media (max-width: 768px){
+  /* لینک‌ها رو جمع کن */
+  .navbar-right ul.nav-links,
+  .navbar-right ul{
+    display: none;
+  }
+    .Navbar{
+        
+    background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.25) 10%,rgba(0, 0, 0, 0.2));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* همبرگر رو نشون بده */
+  .mobile-menu-btn{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* پنل موبایل */
+  .mobile-panel{
+    display: none;
+    width: 100%;
+    background: rgba(0,0,0,0.55);
+    border-radius: 14px;
+  }
+  .mobile-panel.open{
+    display: block;
+  }
+  .icons,.profile{
+    width: 25px !important;
+  }
+
+  /* تا ارتفاع navbar خیلی نخوره، فقط کمی padding و سایز لوگو */
+  .Navbar{
+    padding:14px 50px;
+  }
+
+  /* آیکن‌ها رو مثل قبل کوچیک کن (اگر لازم شد) */
+  .navbar-left img{
+    width: 14%;
+  }
 }

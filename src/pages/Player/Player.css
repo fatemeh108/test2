@@ -187,7 +187,7 @@
 .movie-actions {
   display: flex;
   gap: 12px;
-  margin-bottom: 400px;
+  margin-bottom: 50px;
   margin-top: 8px;
   align-items: center;
 }
@@ -351,6 +351,7 @@
 }
 
 .comment-card {
+  margin-top: 20px;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 

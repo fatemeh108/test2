@@ -282,12 +282,12 @@ const Player = () => {
 
             {/* بخش نظرسنجی و نظرات کاربران */}
             <div className="comments-section mt-10 pt-8 border-t border-purple-500/20 w-full">
-              <h3 className="text-xl font-bold text-purple-400 mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-purple-400 mt-4 mb-6 flex items-center gap-2">
                 💬 نظرات کاربران راجع به فیلم
               </h3>
 
               {/* فرم ثبت نظر */}
-              <form onSubmit={handleCommentSubmit} className="comment-form flex flex-col gap-4 bg-white/5 p-5 rounded-2xl border border-white/5 mb-8">
+              <form onSubmit={handleCommentSubmit} className="comment-form flex flex-col gap-4 bg-white/5 p-5 rounded-2xl mb-8">
                 <h4 className="text-sm font-semibold text-white/80">دیدگاه خود را به اشتراک بگذارید:</h4>
                 
                 <div className=" form flex flex-col md:flex-row gap-4">
