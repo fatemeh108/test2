@@ -1,35 +1,56 @@
-.hero{
-    position: relative;
-}
-.banner-img{
+.home {
+    font-family: 'Tahoma', 'arial';
+    overflow-x: hidden; /* جلوگیری کلی از اسکرول افقی ناخواسته */
     width: 100%;
-    mask-image: linear-gradient(to right,transparent,black 25%);
-    -weblit-mask-image: linear-gradient(to right,transparent,black 25%);
-
 }
-.hero-caption{
+
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mask-image: linear-gradient(to right, transparent, black 25%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 25%); /* تایپوی -weblit- اصلاح شد */
+}
+
+.hero-caption {
     position: absolute;
     width: 100%;
     padding-right: 6%;
+    padding-left: 6%; /* اضافه شد برای جلوگیری از زدن متن به لبه چپ در موبایل */
     bottom: 0;
+    box-sizing: border-box; /* برای محاسبه درست پدینگ در عرض کل */
 }
-.caption-img{
-    width: 30%;
-    min-width: 420px;
 
+.caption-img {
+    width: 30%;
+    max-width: 420px; /* تغییر اصلاحی: به‌جای min-width از max-width استفاده شد */
+    width: 100%;      /* واکنش‌گرا شدن عکس */
+    height: auto;
 }
-.hero-caption p{
+
+.hero-caption p {
     max-width: 600px;
     font-size: 17px;
     margin-bottom: 10px;
+    line-height: 1.6;
 }
-.hero-btn{
+
+.hero-btns {
     display: flex;
+    flex-wrap: wrap; /* در صورت کوچک شدن صفحه، دکمه‌ها زیر هم می‌روند */
     gap: 10px;
+    margin-bottom: 20px;
 }
-.hero-btns .btn img{
+
+.hero-btns .btn img {
     width: 25px;
 }
+
 .hero-btns .btn {
     max-width: fit-content;
     border: 0;
@@ -38,38 +59,56 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    margin-left: 10px;
     font-size: 13px;
     font-weight: 700;
     background: rgba(239, 231, 243, 0.8);
     cursor: pointer;
     border-radius: 12px;
-    transition: background 0.5s,color 0.2s;
-
+    transition: background 0.5s, color 0.2s;
 }
-.hero-btns .btn.dark-btn{
+
+.hero-btns .btn.dark-btn {
     color: #fff;
     background: rgba(192, 172, 197, 0.5);
-    transition: background  0.5s ;
+    transition: background 0.5s;
 }
-.hero-btns .btn:hover{
+
+.hero-btns .btn:hover {
     background: #e6b8ffbf;
     color: rgb(245, 238, 248);
 }
-.hero-btns .btn.dark-btn:hover{
+
+.hero-btns .btn.dark-btn:hover {
     background: #6d6d6e66;
 }
-.more-cards{
+
+.more-cards {
     padding-right: 6%;
-}
-.btn{
-  margin-bottom: 30px;
-}
-.title-cards1{
-    margin-top: 100px;
-
-}
-.home{
-    font-family: 'Tahoma','arial';
+    padding-left: 6%;
+    box-sizing: border-box;
 }
 
+.title-cards1 {
+    margin-top: 50px;
+}
+
+ /* برای نمایش بهتر در موبایل و تبلت */
+@media (max-width: 768px) {
+    .hero-caption p {
+        font-size: 13px;
+        max-width: 100%;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* محدود کردن خطوط متن در موبایل */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .caption-img {
+        max-width: 220px; /* کوچک‌تر شدن لوگو/تصویر متنی در موبایل */
+    }
+
+    .hero-btns .btn {
+        padding: 6px 14px;
+        font-size: 11px;
+    }
+}

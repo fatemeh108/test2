@@ -50,52 +50,52 @@ const Navbar = () => {
 
               <MenuItems
                 transition
-                className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-white/10 rounded-md bg-violet-100 outline-1 -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                className="absolute text-violet-400 right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-white/10 rounded-md bg-violet-200 p-3 outline-1 -outline-offset-1 outline-white/10 transition data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
                 <div className="py-1">
                   <MenuItem>
-                    <button onClick={() => scrollToSection('action')} className="no-underline block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('action')} className="no-underline block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       اکشن
                     </button>
                   </MenuItem>
                   <MenuItem>
-                    <button onClick={() => scrollToSection('recommended')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('recommended')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       ماجراجویی
                     </button>
                   </MenuItem>
                 </div>
                 <div className="py-1">
                   <MenuItem>
-                    <button onClick={() => scrollToSection('comedy')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('comedy')} className="block w-full text-right px-4 py-2 text-sm hover:bg-violet-200">
                       کمدی
                     </button>
                   </MenuItem>
                 </div>
                 <div className="py-1">
                   <MenuItem>
-                    <button onClick={() => scrollToSection('recommended')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('recommended')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       پیشنهادی
                     </button>
                   </MenuItem>
                   <MenuItem>
-                    <button onClick={() => scrollToSection('horror')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('horror')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       ترسناک
                     </button>
                   </MenuItem>
                 </div>
                 <div className="py-1">
                   <MenuItem>
-                    <button onClick={() => scrollToSection('fantasy')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('fantasy')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       فانتزی
                     </button>
                   </MenuItem>
                   <MenuItem>
-                    <button onClick={() => scrollToSection('sci-fi')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('sci-fi')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       علمی-تخیلی
                     </button>
                   </MenuItem>
                   <MenuItem>
-                    <button onClick={() => scrollToSection('crime')} className="block w-full text-right px-4 py-2 text-sm text-gray-800 hover:bg-violet-200">
+                    <button onClick={() => scrollToSection('crime')} className="block w-full text-right px-4 py-2 text-sm  hover:bg-violet-200">
                       جنایی
                     </button>
                   </MenuItem>
