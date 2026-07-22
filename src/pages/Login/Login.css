@@ -19,14 +19,13 @@
 
 .login-logo {
   width: 100px;
-  align-self: flex-start; /* لوگو سمت راست/چپ بالا باقی بماند */
-}
+  align-self: flex-start;}
 
 .login-form {
   width: 100%;
   max-width: 480px; /* به جای عرض ثابت، حداکثر عرض تعریف شد */
   position: relative;
-  padding: 40px 30px; /* پدینگ بهینه‌شده برای موبایل */
+  padding: 40px 30px;
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);

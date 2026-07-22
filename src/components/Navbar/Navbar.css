@@ -55,6 +55,7 @@
   
   
 }
+.logo-icon{width: 50px;}
 
 
 .mobile-panel{
@@ -67,6 +68,7 @@
   margin: 0;
   padding: 10px 10px;
   border-radius: 10px;
+  margin-left: 50px;
   display: grid;
   gap: 10px;
 }
@@ -76,55 +78,93 @@
   border-radius: 10px;
   padding: 10px 12px;
   cursor: pointer;
+  
 }
-
 /* نکته: تو دسکتاپ، ul همون قبلی نمایش داده میشه */
 .nav-links{
   display: block;
 }
 
 /* موبایل */
-@media (max-width: 768px){
-  /* لینک‌ها رو جمع کن */
-  .navbar-right ul.nav-links,
-  .navbar-right ul{
-    display: none;
-  }
-    .Navbar{
-        
-    background-image: linear-gradient(180deg,rgba(0, 0, 0, 0.25) 10%,rgba(0, 0, 0, 0.2));
+/* --- فقط برای ریسپانسیو (موبایل) --- */
+@media (max-width: 768px) {
+  /* ۱. تنظیم موقعیت اصلی نوبار */
+  .Navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 14px 20px;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 10%, rgba(0, 0, 0, 0.2));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
 
-  /* همبرگر رو نشون بده */
-  .mobile-menu-btn{
+  /* مخفی کردن لینک‌های دسکتاپ */
+  .navbar-right ul.nav-links,
+  .navbar-right ul {
+    display: none;
+  }
+
+  /* نمایش دکمه همبرگری */
+  .mobile-menu-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    
+    margin: 0;
   }
-  /* پنل موبایل */
-  .mobile-panel{
+
+  /* ۲. پنل موبایل: قرارگیری دقیق در سمت راست زیر نوبار */
+  .mobile-panel {
     display: none;
-    width: 100%;
-    background: rgba(0,0,0,0.55);
-    border-radius: 14px;
+    position: absolute;
+    top: 100%;          /* دقیقاً زیر نوبار */
+    right: 15px;        /* چسبیده به سمت راست با کمی فاصله از لبه */
+    left: auto;         /* غیرفعال کردن وسط‌چین یا چپ‌چین */
+    width: 220px;       /* عرض منو */
+    z-index: 1000;
   }
-  .mobile-panel.open{
+
+  .mobile-panel.open {
     display: block;
   }
-  .icons,.profile{
-    width: 25px !important;
+  .logo-icon{width: 50px;}
+
+  /* ۳. استایل لیست داخل پنل موبایل */
+  .mobile-links {
+    background-color: rgba(30, 20, 50, 0.95); /* پس‌زمینه تیره و شیک */
+    border: 1px solid rgba(173, 57, 241, 0.3);
+    list-style: none;
+    margin: 0 !important;      /* حذف مارجین‌های قبلی که باعث انحراف می‌شدند */
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;        /* راست‌چین کردن متن‌ها */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   }
 
-  /* تا ارتفاع navbar خیلی نخوره، فقط کمی padding و سایز لوگو */
-  .Navbar{
-    padding:14px 50px;
+  .mobile-links li {
+    background: rgba(174, 57, 241, 0.15);
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 14px;
+    cursor: pointer;
+    text-align: right;
+    transition: background 0.3s ease;
   }
 
-  /* آیکن‌ها رو مثل قبل کوچیک کن (اگر لازم شد) */
-  .navbar-left img{
-    width: 14%;
+  .mobile-links li:hover {
+    background: rgba(174, 57, 241, 0.35);
+  }
+
+  /* سایز آیکن‌ها در موبایل */
+  .icons, .profile {
+    width: 24px !important;
+  }
+
+  .navbar-left img {
+    width: auto;
   }
 }

@@ -313,7 +313,7 @@ const Player = () => {
 
                 <button 
                   type="submit" 
-                  className="submit-comment-btn self-start px-6 py-3 text-white font-medium rounded-xl transition-all shadow-lg shadow-purple-600/20"
+                  className="submit-comment-btn self-start px-6 py-3 text-white font-medium  transition-all shadow-lg shadow-purple-600/20"
                 >
                   ثبت نظر
                 </button>
